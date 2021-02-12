@@ -13,7 +13,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Movies">
+        <Stack.Navigator initialRouteName="Movies" headerMode={false}>
           <Stack.Screen name="Movies" component={Movies} />
         </Stack.Navigator>
       </NavigationContainer>
