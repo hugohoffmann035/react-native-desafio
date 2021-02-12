@@ -1,17 +1,17 @@
 import {takeLatest, call, put} from 'redux-saga/effects';
-import {LOAD_MOVIE, setMovie, loadFaildMovie} from './Movies.actions';
-import Api from '../../services/api';
+import {setMovie, SEARCH_MOVIE, searchMovieFail} from './Movies.actions';
+import api from '../../services/api';
 
-export function* loadMoviesWatcher() {
-  yield takeLatest(LOAD_MOVIE, loadMoviesFLow);
+export function* searchMoviesWatcher() {
+  yield takeLatest(SEARCH_MOVIE, searchMoviesFLow);
 }
 
-function* loadMoviesFLow(action) {
+function* searchMoviesFLow(action) {
   try {
-    const {page} = action.payload;
-    const movies = yield call(Api.get, `&s=guerra`);
+    const {search} = action.payload;
+    const movies = yield call(api.get, `/?apikey=28657bf&s=${search}`);
     yield put(setMovie(movies));
   } catch (err) {
-    yield put(loadFaildMovie());
+    yield put(searchMovieFail());
   }
 }

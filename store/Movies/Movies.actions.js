@@ -1,14 +1,14 @@
-export const LOAD_MOVIE = 'LOAD_MOVIE';
-export const LOAD_FAILD_MOVIE = 'LOAD_FAILD_MOVIE';
+export const SEARCH_MOVIE = 'SEARCH_MOVIE';
+export const SEARCH_MOVIE_FAIL = 'SEARCH_MOVIE_FAIL';
 export const SET_MOVIE = 'SET_MOVIE';
 
-export const loadMovie = ({page = 1}) => ({
-  type: LOAD_MOVIE,
-  payload: {page},
+export const searchMovie = ({search = ''}) => ({
+  type: SEARCH_MOVIE,
+  payload: {search},
 });
 
-export const loadFaildMovie = () => ({
-  type: LOAD_FAILD_MOVIE,
+export const searchMovieFail = () => ({
+  type: SEARCH_MOVIE_FAIL,
 });
 
 export const setMovie = (movies) => ({

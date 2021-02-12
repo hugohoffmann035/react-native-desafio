@@ -1,4 +1,4 @@
-import {LOAD_MOVIE, LOAD_FAILD_MOVIE, SET_MOVIE} from './Movies.actions';
+import {SEARCH_MOVIE, SEARCH_MOVIE_FAIL, SET_MOVIE} from './Movies.actions';
 
 const INITIAL_STATE = {
   docs: [],
@@ -8,13 +8,13 @@ const INITIAL_STATE = {
 
 export const MoviesReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case LOAD_MOVIE: {
+    case SEARCH_MOVIE: {
       return {
         ...state,
         loading: true,
       };
     }
-    case LOAD_FAILD_MOVIE: {
+    case SEARCH_MOVIE_FAIL: {
       return {
         ...state,
         loading: false,
@@ -24,7 +24,7 @@ export const MoviesReducer = (state = INITIAL_STATE, action) => {
     case SET_MOVIE: {
       return {
         ...state,
-        docs: action.payload.Search,
+        docs: action.payload.data.Search,
         loading: false,
       };
     }
