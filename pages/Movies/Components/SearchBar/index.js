@@ -9,9 +9,10 @@ const SearchBar = () => {
   const dispatch = useDispatch();
   const [search, setSearch] = useState('');
 
-  useEffect(() => {
-    dispatch(searchMovie({search}));
-  }, [search]);
+  const handleSearch = (val) => {
+    setSearch(val);
+    dispatch(searchMovie({search: val}));
+  };
 
   return (
     <Container>
@@ -25,7 +26,7 @@ const SearchBar = () => {
         placeholder="Busque por filmes, séries e muito mais"
         placeholderTextColor="#333"
         textAlign="left"
-        onChangeText={setSearch}
+        onChangeText={(val) => handleSearch(val)}
         value={search}
       />
     </Container>
