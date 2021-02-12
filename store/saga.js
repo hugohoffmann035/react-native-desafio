@@ -1,6 +1,6 @@
 import {fork} from 'redux-saga/effects';
-import {loadMoviesWatcher} from './Movies/Movies.saga';
+import {searchMoviesWatcher} from './Movies/Movies.saga';
 
 export function* rootSaga() {
-  yield fork(loadMoviesWatcher);
+  yield fork(searchMoviesWatcher);
 }
