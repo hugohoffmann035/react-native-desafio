@@ -1,5 +1,8 @@
-import Axios from 'axios';
+import axios from 'axios';
 
-export default Axios.create({
-  baseURL: 'http://www.omdbapi.com/?apikey=28657bf',
+export default axios.create({
+  baseURL: 'http://www.omdbapi.com',
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
