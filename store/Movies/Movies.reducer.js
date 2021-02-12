@@ -12,6 +12,7 @@ export const MoviesReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loading: true,
+        error: '',
       };
     }
     case SEARCH_MOVIE_FAIL: {
@@ -26,6 +27,7 @@ export const MoviesReducer = (state = INITIAL_STATE, action) => {
         ...state,
         docs: action.payload.data.Search,
         loading: false,
+        error: '',
       };
     }
     default:
