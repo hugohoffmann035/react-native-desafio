@@ -10,6 +10,9 @@ function* searchMoviesFLow(action) {
   try {
     const {search} = action.payload;
     const movies = yield call(api.get, `/?apikey=28657bf&s=${search}`);
+    const {Response} = movies.data;
+    if (Response == 'False') return yield put(searchMovieFail());
+
     yield put(setMovie(movies));
   } catch (err) {
     yield put(searchMovieFail());
