@@ -1,17 +1,20 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
   margin: 10px 10px;
+  width: 180px;
 `;
 
 export const Title = styled.Text`
-  font-size: 20px;
+  font-size: 17px;
   font-weight: bold;
   color: #000;
+  text-align: center;
 `;
 
 export const Img = styled.Image`
-  width: 200px;
-  height: 200px;
-  border-radius: 6px;
+  height: 250px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #e8e8e8;
 `;

@@ -1,26 +1,23 @@
 import React from 'react';
 import {ScrollView} from 'react-native';
-import {useSelector} from 'react-redux';
 
 import {Container} from './styles';
 import SearchBar from './Components/SearchBar';
 import Movies from './Components/Movies';
 import Series from './Components/Series';
 import Loading from './Components/Loading';
+import Spacer from './Components/Spacer';
 
-const VideoStore = () => {
-  const videos = useSelector((state) => state.videos);
-
-  return (
-    <Container>
-      <SearchBar />
-      <ScrollView>
-        <Movies />
-        <Series />
-        <Loading />
-      </ScrollView>
-    </Container>
-  );
-};
+const VideoStore = ({navigation}) => (
+  <Container>
+    <SearchBar />
+    <ScrollView>
+      <Movies navigation={navigation} />
+      <Series navigation={navigation} />
+      <Loading />
+      <Spacer />
+    </ScrollView>
+  </Container>
+);
 
 export default VideoStore;
