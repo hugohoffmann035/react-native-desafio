@@ -1,8 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  margin-bottom: 10px;
-  border-radius: 6px;
+  margin: 10px 10px;
 `;
 
 export const Title = styled.Text`
@@ -12,7 +11,7 @@ export const Title = styled.Text`
 `;
 
 export const Img = styled.Image`
-  width: 100%;
+  width: 200px;
   height: 200px;
   border-radius: 6px;
 `;

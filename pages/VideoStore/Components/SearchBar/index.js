@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Container} from './styles';
 import Input from '../../../../Components/Input';
 
 import {useDispatch} from 'react-redux';
-import {searchMovie} from '../../../../store/Movies/Movies.actions';
+import {searchVideo} from '../../../../store/VideoStore/VideoStore.actions';
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const SearchBar = () => {
 
   const handleSearch = (val) => {
     setSearch(val);
-    dispatch(searchMovie({search: val}));
+    dispatch(searchVideo({search: val}));
   };
 
   return (

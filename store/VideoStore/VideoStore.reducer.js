@@ -1,4 +1,4 @@
-import {SEARCH_MOVIE, SEARCH_MOVIE_FAIL, SET_MOVIE} from './Movies.actions';
+import {SEARCH_VIDEO, SEARCH_VIDEO_FAIL, SET_VIDEO} from './VideoStore.actions';
 
 const INITIAL_STATE = {
   docs: [],
@@ -8,21 +8,21 @@ const INITIAL_STATE = {
 
 export const MoviesReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case SEARCH_MOVIE: {
+    case SEARCH_VIDEO: {
       return {
         ...state,
         loading: true,
         error: '',
       };
     }
-    case SEARCH_MOVIE_FAIL: {
+    case SEARCH_VIDEO_FAIL: {
       return {
         ...state,
         loading: false,
         error: 'Não foi possível encontrar.',
       };
     }
-    case SET_MOVIE: {
+    case SET_VIDEO: {
       return {
         ...state,
         docs: action.payload.data.Search,
