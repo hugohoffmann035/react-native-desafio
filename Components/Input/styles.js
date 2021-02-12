@@ -1,18 +1,14 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  margin-top: 2;
-  margin-bottom: 2;
-  margin-left: 2;
-  margin-right: 2;
+  margin: 2px;
 `;
 
 export const Input = styled.TextInput`
   background-color: #d1d1d1;
-  height: 56px;
-  padding-left: 15px;
-  padding-right: 15px;
   border-radius: 6px;
+  height: 56px;
+  padding: 0px 15px;
 
   color: #333;
   font-size: 16px;
