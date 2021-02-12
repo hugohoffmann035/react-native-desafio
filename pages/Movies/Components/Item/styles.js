@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  margin: 5px 0px;
+  margin-bottom: 10px;
   border-radius: 6px;
 `;
 
